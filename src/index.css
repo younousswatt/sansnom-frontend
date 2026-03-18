@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=Spectral:wght@400;600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --burgundy: #381932;
+  --cream: #FFF3E6;
+  --cream-dark: #f5e8d5;
+  --burgundy-light: rgba(56, 25, 50, 0.07);
+  --burgundy-mid: rgba(56, 25, 50, 0.15);
+  --burgundy-border: rgba(56, 25, 50, 0.1);
+  --text-primary: #2a1620;
+  --text-secondary: rgba(42, 22, 32, 0.55);
+  --text-muted: rgba(42, 22, 32, 0.35);
+  --bg-primary: #ffffff;
+  --bg-page: #FFF3E6;
+  --bg-card: #ffffff;
+  --border: rgba(56, 25, 50, 0.1);
+  --border-hover: rgba(56, 25, 50, 0.22);
+  --online: #4caf50;
+  --busy: #ff9800;
+  --font-display: 'Spectral', 'Georgia', serif;
+  --font-body: 'DM Sans', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+  --shadow-card: 0 1px 3px rgba(56, 25, 50, 0.06);
+  --nav-height: 56px;
+  --transition: 0.18s ease;
+}
+
+[data-theme="dark"] {
+  --burgundy-light: rgba(255, 243, 230, 0.06);
+  --burgundy-mid: rgba(255, 243, 230, 0.12);
+  --burgundy-border: rgba(255, 243, 230, 0.08);
+  --text-primary: #e8d8cc;
+  --text-secondary: rgba(232, 216, 204, 0.55);
+  --text-muted: rgba(232, 216, 204, 0.35);
+  --bg-primary: #1a0d14;
+  --bg-page: #1a0d14;
+  --bg-card: rgba(255, 243, 230, 0.04);
+  --border: rgba(255, 243, 230, 0.08);
+  --border-hover: rgba(255, 243, 230, 0.2);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-page);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background var(--transition), color var(--transition);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+input, textarea {
+  font-family: var(--font-body);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.display-font {
+  font-family: var(--font-display);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--burgundy-mid);
+  border-radius: 4px;
+}
