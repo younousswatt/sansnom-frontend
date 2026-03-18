@@ -42,14 +42,6 @@ function AppContent() {
   );
 }
 
-function AppWithAuth() {
-  return (
-    <AuthProvider>
-      <AppContent />
-    </AuthProvider>
-  );
-}
-
 export default function App() {
   return (
     <ThemeProvider>

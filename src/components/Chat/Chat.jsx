@@ -164,7 +164,6 @@ export default function Chat({ onShowAuth }) {
     );
   }
 
-  const currentRoomId = room?.id || activeWaitingRoom?.id;
   const showChat = (!isVolunteer && room) || (isVolunteer && activeWaitingRoom);
 
   return (
