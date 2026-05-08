@@ -1,0 +1,210 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(56, 25, 50, 0.45);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+
+[data-theme="dark"] .modal-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.modal {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  width: 100%;
+  max-width: 520px;
+  padding: 28px;
+  box-shadow: 0 8px 40px rgba(56, 25, 50, 0.15);
+  animation: modal-in 0.22s ease;
+}
+
+[data-theme="dark"] .modal {
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes modal-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.modal__title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  color: var(--text-primary);
+  font-weight: normal;
+  letter-spacing: 0.3px;
+}
+
+.modal__close {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition);
+  display: flex;
+}
+
+.modal__close:hover {
+  color: var(--text-primary);
+}
+
+.modal__notice {
+  font-size: 12px;
+  color: var(--text-muted);
+  background: var(--burgundy-light);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.modal__notice strong {
+  color: var(--text-secondary);
+}
+
+.modal__error {
+  font-size: 12px;
+  color: #c62828;
+  background: rgba(198, 40, 40, 0.07);
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+}
+
+.modal__label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.modal__themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.modal__theme-btn {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.modal__theme-btn:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.modal__theme-btn--active {
+  background: var(--burgundy);
+  color: var(--cream);
+  border-color: var(--burgundy);
+}
+
+[data-theme="dark"] .modal__theme-btn--active {
+  background: rgba(255, 243, 230, 0.14);
+  border-color: rgba(255, 243, 230, 0.2);
+}
+
+.modal__textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background: var(--bg-page);
+  resize: none;
+  transition: border-color var(--transition);
+  outline: none;
+}
+
+.modal__textarea:focus {
+  border-color: var(--burgundy);
+}
+
+[data-theme="dark"] .modal__textarea:focus {
+  border-color: rgba(255, 243, 230, 0.35);
+}
+
+.modal__count {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.modal__actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  padding-top: 4px;
+}
+
+.modal__cancel {
+  padding: 9px 18px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+}
+
+.modal__cancel:hover {
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.modal__submit {
+  padding: 9px 22px;
+  border-radius: var(--radius-pill);
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  background: var(--burgundy);
+  color: var(--cream);
+  transition: opacity var(--transition);
+}
+
+.modal__submit:hover:not(:disabled) {
+  opacity: 0.85;
+}
+
+.modal__submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

@@ -1,0 +1,143 @@
+.forum {
+  display: grid;
+  grid-template-columns: 200px 1fr 200px;
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  align-items: start;
+}
+
+.forum__sidebar {
+  position: sticky;
+  top: calc(var(--nav-height) + 20px);
+}
+
+.forum__feed {
+  min-width: 0;
+}
+
+.forum__right {
+  position: sticky;
+  top: calc(var(--nav-height) + 20px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.forum__widget {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 16px;
+  box-shadow: var(--shadow-card);
+}
+
+.forum__widget-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  color: var(--text-primary);
+  font-weight: normal;
+  margin-bottom: 12px;
+  letter-spacing: 0.2px;
+}
+
+.forum__peer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.forum__peer-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.forum__peer-role {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.forum__no-peers {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 8px;
+}
+
+.forum__chat-btn {
+  width: 100%;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  border-radius: var(--radius-pill);
+  padding: 8px;
+  font-size: 12px;
+  margin-top: 4px;
+  transition: all var(--transition);
+}
+
+.forum__chat-btn:hover {
+  background: var(--burgundy);
+  color: var(--cream);
+  border-color: var(--burgundy);
+}
+
+.forum__stats {
+  display: flex;
+}
+
+.forum__stat {
+  flex: 1;
+  text-align: center;
+  padding: 6px 0;
+  border-right: 1px solid var(--border);
+}
+
+.forum__stat:last-child {
+  border-right: none;
+}
+
+.forum__stat-num {
+  font-family: var(--font-display);
+  font-size: 26px;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.forum__stat-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .forum {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .forum__sidebar {
+    position: static;
+  }
+  .forum__right {
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .forum__right .forum__widget {
+    flex: 1;
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 500px) {
+  .forum {
+    padding: 12px;
+    gap: 14px;
+  }
+  .forum__right {
+    flex-direction: column;
+  }
+}
